@@ -11,7 +11,7 @@ pipeline {
                 sh '''
 
                 apt-get update
-		apt-get intall git -y
+		apt-get install git -y
 		git init
 		git config --global user.name "venkatsai8"
 		git config --global user.email "natrajsai7@gmail.com"
