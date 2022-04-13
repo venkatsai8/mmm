@@ -7,8 +7,7 @@ pipeline {
     stages {
         stage('Develop') {
             steps {
-	     withCredentials([usernamePassword(credentials:'mor',
-		passwordVariable:'password',usernameVariable:'username')]){
+
                 sh '''
 
                 apt-get update
@@ -23,7 +22,6 @@ pipeline {
 		git remote set-url git@github.com:venkatsai8/mmm.git
 		git push -u origin master
                '''
-		}
             }
         }
      }
