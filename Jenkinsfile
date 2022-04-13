@@ -10,6 +10,7 @@ pipeline {
 	     withCredentials([usernamePassword(credentials:'mor',
 		passwordVariable:'password',usernameVariable:'username')]){
                 sh '''
+
                 apt-get update
 		apt-get intall git -y
 		git init
@@ -19,9 +20,7 @@ pipeline {
 		git add README.md
 		git commit -m "first commit"
 		git branch -M master
-		#git remote add origin git@github.com:venkatsai8/sam.git
-		#git remote set-url origin git@github.com:venkatsai8/mmm.git
-		git remote set-url https://mor:${password}@github.com:venkatsai8/mmm.git
+		git remote set-url git@github.com:venkatsai8/mmm.git
 		git push -u origin master
                '''
 		}
